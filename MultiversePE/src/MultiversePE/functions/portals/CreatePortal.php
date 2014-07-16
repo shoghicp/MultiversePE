@@ -4,7 +4,7 @@ namespace MultiversePE\functions\portals;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Player;
 
-class Create extends PluginTask{
+class CreatePortal extends PluginTask{
   public function onRun(){
   }
   
