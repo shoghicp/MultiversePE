@@ -1,5 +1,5 @@
-name: MultiversePE-Core
-main: MultiversePE-Core\Main
+name: MultiversePE
+main: MultiversePE\Main
 version: 1.0.0
 api: [1.0.0, 1.1.0]
 
@@ -10,10 +10,16 @@ description: Multiple world management for PocketMine-MP!
 commands:
     multiverse:
         description: "Multiverse Admin Commands!"
-        usage: "/multiverse <create|delete|import> [options] <name>"
+        usage: "/multiverse <worlds|portals|signs>"
         aias: [mv, multiv, mverse, multiversepe, mvpe, multivpe, mversepe]
         permission: multiverse.core.multiverse
 permissions:
-    multiverse.core.multiverse:
-        description: "Allows players to use the MultiversePE admin commands!"
+    multiverse.pe.worlds:
+        description: "Allows players to use the MultiversePE-Worlds commands!"
+        default: op
+    multiverse.pe.portals:
+        description: "Allows players to use the MultiversePE-Portals commands!"
+        default: op
+    multiverse.pe.signs:
+        description: "Allows players to use the MultiversePE-Signs commands!"
         default: op
