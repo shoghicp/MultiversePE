@@ -4,7 +4,7 @@ namespace MultiversePE\functions\worlds;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Player;
 
-class Load extends PluginTask{
+class LoadWorld extends PluginTask{
   public function onRun(){
   }
   
