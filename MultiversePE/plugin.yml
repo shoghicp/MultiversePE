@@ -8,9 +8,9 @@ authors: [Comedyman937]
 description: Multiple world management for PocketMine-MP!
 
 commands:
-    multiverse:
+    multiversepe:
         description: "Multiverse Admin Commands!"
-        usage: "/multiverse <worlds|portals|signs>"
+        usage: "/multiversepe <worlds|portals|signs>"
         aias: [mv, multiv, mverse, multiversepe, mvpe, multivpe, mversepe]
         permission: multiverse.core.multiverse
 permissions:
