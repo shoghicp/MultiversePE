@@ -4,7 +4,7 @@ namespace MultiversePE\functions\portals;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Player;
 
-class Delete extends PluginTask{
+class DeletePortal extends PluginTask{
   public function onRun(){
   }
   
