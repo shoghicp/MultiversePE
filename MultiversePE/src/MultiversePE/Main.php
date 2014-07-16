@@ -48,7 +48,13 @@ class Main extends PluginBase implements Listener, CommandExecutor{
           if(isset($args[1])){
             $b = $args[1];
             if($b = "create"){
-              //TODO: Create Worlds
+              if(isset($args[2])){
+                $name = $args[2];
+                $create = new Create($this);
+                $create->createWorld($name);
+              }else{
+                $sender->sendMessage("[MultiversePE] You must specify a name!");
+              }
             }elseif($b = "delete"){
               //TODO: Delete Worlds
             }elseif($b = "import"){
