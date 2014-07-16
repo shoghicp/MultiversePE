@@ -4,7 +4,7 @@ namespace MultiversePE\functions\worlds;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Player;
 
-class Delete extends PluginTask{
+class DeleteWorld extends PluginTask{
   public function onRun(){
   }
   
