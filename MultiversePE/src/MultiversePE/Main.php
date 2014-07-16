@@ -1,5 +1,5 @@
 <?php
-namespace MultiversePE-Core;
+namespace MultiversePE;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\level\Position;
