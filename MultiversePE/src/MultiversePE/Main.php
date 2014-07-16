@@ -18,16 +18,31 @@ class Main extends PluginBase implements Listener, CommandExecutor{
   
   public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
     switch($cmd->getName()){
-      case "multiverse":
+      case "multiversepe":
         if(isset($args[0]){
           $0 = $args[0];
           if($0 == "help"){
-            $sender->sendMessage("==========[MultiversePE Core]==========\n");
-            $sender->sendMessage("/multiverse create - Create a new world\n");
-            $sender->sendMessage("/multiverse delete - Deletes an existing world\n");
-            $sender->sendMessage("/multiverse import - Imports an existing world\n");
-            $sender->sendMessage("/multiverse load - Loads an existing world");
-            //TODO: Check what other Multiverse plugins are loaded and show the help for them
+            $sender->sendMessage("================[MultiversePE]===============\n");
+            if($this->getConfig()->get("Enable-MultiversePE-Worlds") === true){
+              $sender->sendMessage("/multiverse worlds create - Create a new world\n");
+              $sender->sendMessage("/multiverse worlds delete - Deletes an existing world\n");
+              $sender->sendMessage("/multiverse worlds import - Imports an existing world\n");
+              $sender->sendMessage("/multiverse worlds load - Loads an existing world\n");
+              $sender->sendMessage("/multiverse worlds disable - Disable MultiversePE Worlds\n");
+            }
+            if($this->getConfig()->get("Enable-MultiversePE-Portals") === true){
+              $sender->sendMessage("/multiverse portals create - Create a portal\n");
+              $sender->sendMessage("/multiverse portals delete - Delete a portal\n");
+              $sender->sendMessage("/multiverse portals disable - Disable MultiversePE Portals\n");
+            }
+            if($this->getConfig()->get("Enable-MultiversePE-Signs") === true){
+              $sender->sendMessage("/multiverse signs disable - Disable MultiversePE Signs\n");
+            }
+            if($this->getConfig()->get("Enable-MultiversePE-Worlds") === false and $this->getConfig()->get("Enable-MultiversePE-Portals") === false and $this->getConfig()->get("Enable-MultiversePE-Signs") === false){
+              $sender->sendMessage("No MultiversePE settings are enabled\n");
+              $sender->sendMessage("Please enable at least one setting to use MultiversePE\n");
+            }
+            $sender->sendMessage("============================================\n");
             return true;
           }
         }else{
