@@ -20,23 +20,23 @@ class Main extends PluginBase implements Listener, CommandExecutor{
     switch($cmd->getName()){
       case "multiversepe":
         if(isset($args[0]){
-          $0 = $args[0];
-          if($0 == "help"){
+          $a = $args[0];
+          if($a == "help"){
             $sender->sendMessage("================[MultiversePE]===============\n");
             if($this->getConfig()->get("Enable-MultiversePE-Worlds") === true){
-              $sender->sendMessage("/multiverse worlds create - Create a new world\n");
-              $sender->sendMessage("/multiverse worlds delete - Deletes an existing world\n");
-              $sender->sendMessage("/multiverse worlds import - Imports an existing world\n");
-              $sender->sendMessage("/multiverse worlds load - Loads an existing world\n");
-              $sender->sendMessage("/multiverse worlds disable - Disable MultiversePE Worlds\n");
+              $sender->sendMessage("/multiversepe worlds create - Create a new world\n");
+              $sender->sendMessage("/multiversepe worlds delete - Deletes an existing world\n");
+              $sender->sendMessage("/multiversepe worlds import - Imports an existing world\n");
+              $sender->sendMessage("/multiversepe worlds load - Loads an existing world\n");
+              $sender->sendMessage("/multiversepe worlds disable - Disable MultiversePE Worlds\n");
             }
             if($this->getConfig()->get("Enable-MultiversePE-Portals") === true){
-              $sender->sendMessage("/multiverse portals create - Create a portal\n");
-              $sender->sendMessage("/multiverse portals delete - Delete a portal\n");
-              $sender->sendMessage("/multiverse portals disable - Disable MultiversePE Portals\n");
+              $sender->sendMessage("/multiversepe portals create - Create a portal\n");
+              $sender->sendMessage("/multiversepe portals delete - Delete a portal\n");
+              $sender->sendMessage("/multiversepe portals disable - Disable MultiversePE Portals\n");
             }
             if($this->getConfig()->get("Enable-MultiversePE-Signs") === true){
-              $sender->sendMessage("/multiverse signs disable - Disable MultiversePE Signs\n");
+              $sender->sendMessage("/multiversepe signs disable - Disable MultiversePE Signs\n");
             }
             if($this->getConfig()->get("Enable-MultiversePE-Worlds") === false and $this->getConfig()->get("Enable-MultiversePE-Portals") === false and $this->getConfig()->get("Enable-MultiversePE-Signs") === false){
               $sender->sendMessage("No MultiversePE settings are enabled\n");
@@ -44,9 +44,61 @@ class Main extends PluginBase implements Listener, CommandExecutor{
             }
             $sender->sendMessage("============================================\n");
             return true;
+        }elseif($a == "worlds" and $this->getConfig()->get("Enable-MultiversePE-Worlds") === true){
+          if(isset($args[1])){
+            $b = $args[1];
+            if($b = "create"){
+              //TODO: Create Worlds
+            }elseif($b = "delete"){
+              //TODO: Delete Worlds
+            }elseif($b = "import"){
+              //TODO: Import Worlds
+            }elseif($b = "load"){
+              //TODO: Load World
+            }elseif($b = "disable"){
+              //TODO: Disable
+            }else{
+              $sender->sendMessage("/multiversepe worlds <create|delete|import|load|disable> <name>");
+            }
+          }elseif($this->getConfig()->get("Enable-MultiversePE-Worlds") === false){
+            $sender->sendMessage("[MultiversePE] MultiversePE-Worlds is disabled!");
+          }
+        }elseif($a == "portals"){
+          if(isset($args[1])){
+            $b = $args[1];
+            if($b = "create"){
+              //TODO: Create Worlds
+            }elseif($b = "delete"){
+              //TODO: Delete Worlds
+            }elseif($b = "disable"){
+              //TODO: Disable
+            }else{
+              $sender->sendMessage("/multiversepe portals <create|delete|disable> <name>");
+            }
+          }elseif($this->getConfig()->get("Enable-MultiversePE-Portals") === false){
+            $sender->sendMessage("[MultiversePE] MultiversePE-Portals is disabled!");
+          }
+        }elseif($a == "signs"){
+          if(isset($args[1])){
+            $b = $args[1];
+            if($b = "disable"){
+              //TODO: Disable
+            }else{
+              $sender->sendMessage("/multiversepe signs <disable>");
+            }
+          }elseif($this->getConfig()->get("Enable-MultiversePE-Signs") === false){
+            $sender->sendMessage("[MultiversePE] MultiversePE-Signs is disabled!");
           }
         }else{
-          $sender->sendMessage("Usage: /multiverse <create|delete|import|load> <name>");
+          if($this->getConfig()->get("Enable-MultiversePE-Worlds") === true and $this->getConfig()->get("Enable-MultiversePE-Portals") === true and $this->getConfig()->get("Enable-MultiversePE-Signs") === true){
+            $sender->sendMessage("Usage: /multiversepe <worlds|portals|signs>");
+          }elseif($this->getConfig()->get("Enable-MultiversePE-Portals") === true and $this->getConfig()->get("Enable-MultiversePE-Signs") === true){
+            $sender->sendMessage("Usage: /multiversepe <portals|signs>");
+          }elseif($this->getConfig()->get("Enable-MultiversePE-Worlds") === true and $this->getConfig()->get("Enable-MultiversePE-Signs") === true){
+            $sender->sendMessage("Usage: /multiversepe <worlds|signs>");
+          }elseif($this->getConfig()->get("Enable-MultiversePE-Worlds") === true and $this->getConfig()->get("Enable-MultiversePE-Portals") === true){
+            $sender->sendMessage("Usage: /multiversepe <worlds|portals>");
+          }
           return true;
         }
       break;
