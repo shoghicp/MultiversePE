@@ -56,14 +56,19 @@ class Main extends PluginBase implements Listener, CommandExecutor{
             }elseif($b = "load"){
               //TODO: Load World
             }elseif($b = "disable"){
-              //TODO: Disable
+              if($this->getConfig()->get("Enable-MultiversePE-Worlds") === true){
+                $this->getConfig()->set("Enable-MultiversePE-Worlds", false);
+                $this->getConfig()->save();
+              }else{
+                $sender->sendMessage("[MultiversePE] MultiversePE-Worlds is disabled!");
+              }
             }else{
               $sender->sendMessage("/multiversepe worlds <create|delete|import|load|disable> <name>");
             }
           }elseif($this->getConfig()->get("Enable-MultiversePE-Worlds") === false){
             $sender->sendMessage("[MultiversePE] MultiversePE-Worlds is disabled!");
           }
-        }elseif($a == "portals"){
+        }elseif($a == "portals" and $this->getConfig()->get("Enable-MultiversePE-Portals") === true){
           if(isset($args[1])){
             $b = $args[1];
             if($b = "create"){
@@ -71,18 +76,28 @@ class Main extends PluginBase implements Listener, CommandExecutor{
             }elseif($b = "delete"){
               //TODO: Delete Worlds
             }elseif($b = "disable"){
-              //TODO: Disable
+              if($this->getConfig()->get("Enable-MultiversePE-Portals") === true){
+                $this->getConfig()->set("Enable-MultiversePE-Portals", false);
+                $this->getConfig()->save();
+              }else{
+                $sender->sendMessage("[MultiversePE] MultiversePE-Portals is disabled!");
+              }
             }else{
               $sender->sendMessage("/multiversepe portals <create|delete|disable> <name>");
             }
           }elseif($this->getConfig()->get("Enable-MultiversePE-Portals") === false){
             $sender->sendMessage("[MultiversePE] MultiversePE-Portals is disabled!");
           }
-        }elseif($a == "signs"){
+        }elseif($a == "signs" and $this->getConfig()->get("Enable-MultiversePE-Signs") === true){
           if(isset($args[1])){
             $b = $args[1];
             if($b = "disable"){
-              //TODO: Disable
+              if($this->getConfig()->get("Enable-MultiversePE-Signs") === true){
+                $this->getConfig()->set("Enable-MultiversePE-Signs", false);
+                $this->getConfig()->save();
+              }else{
+                $sender->sendMessage("[MultiversePE] MultiversePE-Signs is disabled!");
+              }
             }else{
               $sender->sendMessage("/multiversepe signs <disable>");
             }
