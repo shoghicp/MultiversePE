@@ -8,12 +8,12 @@ authors: [Comedyman937]
 description: Multiple world management for PocketMine-MP!
 
 commands:
-    multiverse-core:
+    multiverse:
         description: "Multiverse Admin Commands!"
         usage: "/multiverse <create|delete|import> [options] <name>"
-        aias: [mvc, multiversec, multiversecore]
-        permission: multiverse.core.multiversecore
+        aias: [mv, multiv, mverse, multiversepe, mvpe, multivpe, mversepe]
+        permission: multiverse.core.multiverse
 permissions:
-    multiverse.core.multiversecore:
-        description: "Allows players to use the MultiversePE-Core admin commands!"
+    multiverse.core.multiverse:
+        description: "Allows players to use the MultiversePE admin commands!"
         default: op
