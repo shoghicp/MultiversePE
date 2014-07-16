@@ -5,7 +5,6 @@ use pocketmine\scheduler\PluginTask;
 use pocketmine\Player;
 
 class Create extends PluginTask{
-  private $p;
   public function onRun(){
   }
   
