@@ -96,9 +96,21 @@ class Main extends PluginBase implements Listener, CommandExecutor{
           if(isset($args[1])){
             $b = $args[1];
             if($b = "create"){
-              //TODO: Create Worlds
+              if(isset($args[2])){
+                $name = $args[2];
+                $create = new CreatePortal($this);
+                $create->createPortal($name);
+              }else{
+                $sender->sendMessage("[MultiversePE] You must specify a name!");
+              }
             }elseif($b = "delete"){
-              //TODO: Delete Worlds
+              if(isset($args[2])){
+                $name = $args[2];
+                $create = new DeletePortal($this);
+                $create->deletePortal($name);
+              }else{
+                $sender->sendMessage("[MultiversePE] You must specify a name!");
+              }
             }elseif($b = "disable"){
               if($this->getConfig()->get("Enable-MultiversePE-Portals") === true){
                 $this->getConfig()->set("Enable-MultiversePE-Portals", false);
