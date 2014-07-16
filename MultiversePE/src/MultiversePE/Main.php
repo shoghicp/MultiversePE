@@ -50,7 +50,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
             if($b = "create"){
               if(isset($args[2])){
                 $name = $args[2];
-                $create = new Create($this);
+                $create = new CreateWorld($this);
                 $create->createWorld($name);
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
@@ -58,7 +58,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
             }elseif($b = "delete"){
               if(isset($args[2])){
                 $name = $args[2];
-                $create = new Delete($this);
+                $create = new DeleteWorld($this);
                 $create->deleteWorld($name);
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
@@ -66,7 +66,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
             }elseif($b = "import"){
               if(isset($args[2])){
                 $name = $args[2];
-                $create = new Import($this);
+                $create = new ImportWorld($this);
                 $create->importWorld($name);
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
@@ -74,7 +74,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
             }elseif($b = "load"){
               if(isset($args[2])){
                 $name = $args[2];
-                $create = new Load($this);
+                $create = new LoadWorld($this);
                 $create->loadWorld($name);
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
