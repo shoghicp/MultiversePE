@@ -11,7 +11,7 @@ commands:
     multiversepe:
         description: "Multiverse Admin Commands!"
         usage: "/multiversepe <worlds|portals|signs>"
-        aias: [mv, multiv, mverse, multiversepe, mvpe, multivpe, mversepe]
+        alias: [mv, multiv, mverse, multiversepe, mvpe, multivpe, mversepe]
         permission: multiverse.core.multiverse
 permissions:
     multiverse.pe.worlds:
