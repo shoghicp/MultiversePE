@@ -10,7 +10,7 @@ class CreateWorld extends PluginTask{
   
   public function createWorld($name){
     $this->name = $name;
-    //TODO: Generate new world with name $this->name
+    $this->getServer()->generateLevel($this->name);
   }
 }
 ?>
