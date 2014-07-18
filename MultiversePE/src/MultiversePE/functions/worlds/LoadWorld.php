@@ -10,7 +10,7 @@ class LoadWorld extends PluginTask{
   
   public function loadWorld($name){
     $this->name = $name;
-    //TODO: Load world with name $this->name
+    $this->getServer()->loadLevel($this->name);
   }
 }
 ?>
