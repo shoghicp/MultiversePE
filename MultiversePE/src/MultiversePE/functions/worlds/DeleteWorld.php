@@ -5,12 +5,19 @@ use pocketmine\scheduler\PluginTask;
 use pocketmine\Player;
 
 class DeleteWorld extends PluginTask{
+  protected $plugin;
+	public function __construct(Main $plugin){
+		$this->plugin = $plugin;
+	}
+  
   public function onRun(){
   }
   
   public function deleteWorld($name){
     $this->name = $name;
-    //TODO: Delete world with name $this->name
+    if(file_exists($this->dataPath ."worlds/".$name."/")){
+      unlink($this->dataPath ."worlds/".$name."/");
+    }
   }
 }
 ?>
