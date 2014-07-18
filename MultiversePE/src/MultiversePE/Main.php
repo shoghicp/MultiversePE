@@ -19,7 +19,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
   public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
     switch($cmd->getName()){
       case "multiversepe":
-        if(isset($args[0]){
+        if(isset($args[0])){
           $a = $args[0];
           if($a == "help"){
             $sender->sendMessage("================[MultiversePE]===============\n");
@@ -174,6 +174,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
       break;
     }
   }
+}
   
   public function onEvent(){
     //TODO: Events
