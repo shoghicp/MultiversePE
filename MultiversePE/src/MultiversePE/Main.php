@@ -50,32 +50,49 @@ class Main extends PluginBase implements Listener, CommandExecutor{
             if($b = "create"){
               if(isset($args[2])){
                 $name = $args[2];
+                if($this->getServer()->getLevelByName($name)){
+                  $sender->sendMessage("[MultiversePE] That level already exists!");
+                }else{
                 $create = new CreateWorld($this);
                 $create->createWorld($name);
+                $sender->sendMessage("[MultiversePE] Level created and generated successfully!");
+                }
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
               }
             }elseif($b = "delete"){
               if(isset($args[2])){
                 $name = $args[2];
-                $create = new DeleteWorld($this);
-                $create->deleteWorld($name);
+                if($name = $this->getServer()->getDefaultLevel()){
+                  $sender->sendMessage("[MultiversePE] You can not delete the default level!");
+                }else{
+                  $create = new DeleteWorld($this);
+                  $create->deleteWorld($name);
+                  $sender->sendMessage("[MultiversePE] Level deleted successfully!");
+                }
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
               }
             }elseif($b = "import"){
               if(isset($args[2])){
                 $name = $args[2];
+                //TODO: Is the level already imported?
                 $create = new ImportWorld($this);
                 $create->importWorld($name);
+                $sender->senderMessage("[MultiversePE] Level imported successfully!");
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
               }
             }elseif($b = "load"){
               if(isset($args[2])){
                 $name = $args[2];
-                $create = new LoadWorld($this);
-                $create->loadWorld($name);
+                if($this->getServer()->isLevelLoaded($name)){
+                  $sender->sendMessage("[MultiversePE] Level is already loaded!");
+                }else{
+                  $create = new LoadWorld($this);
+                  $create->loadWorld($name);
+                  $sender->sendMessage("[MultiversePE] Level loaded successfully!!");
+                }
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
               }
@@ -100,6 +117,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
                 $name = $args[2];
                 $create = new CreatePortal($this);
                 $create->createPortal($name);
+                $sender->sendMessage("[MultiversePE] Portal created successfully!");
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
               }
@@ -108,6 +126,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
                 $name = $args[2];
                 $create = new DeletePortal($this);
                 $create->deletePortal($name);
+                $sender->sendMessage("[MultiversePE] Portal deleted successfully!");
               }else{
                 $sender->sendMessage("[MultiversePE] You must specify a name!");
               }
