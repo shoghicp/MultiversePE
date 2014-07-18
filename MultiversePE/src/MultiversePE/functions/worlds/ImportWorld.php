@@ -11,7 +11,7 @@ class ImportWorld extends PluginTask{
   
   public function importWorld($name){
     $this->name = $name;
-    //TODO: Import worlds (Likely with a custom generator)
+    $this->level->LevelImport->import($this->name); //Right?
   }
 }
 ?>
