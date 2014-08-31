@@ -3,7 +3,7 @@ namespace MultiversePE;
 
 use pocketmine\command\Command;
 use pocketmine\command\PluginIdentifiableCommand;
-use pocketmine\event Listener;
+use pocketmine\event\Listener;
 
 abstract class BaseCommand extends Command implements Listener, PluginIdentifiableCommand {
 	private $api;
